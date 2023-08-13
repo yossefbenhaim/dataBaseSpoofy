@@ -1,12 +1,14 @@
-const cors = require('cors');
-const express = require('express');
-const { default: PgPubSub } = require('@graphile/pg-pubsub');
-const Filter = require('postgraphile-plugin-connection-filter');
-const { postgraphile, makePluginHook } = require('postgraphile');
+import cors from 'cors'
+import dotenv from "dotenv"
+import express from 'express'
+import Filter from "postgraphile-plugin-connection-filter"
+import PgPubSub from "@graphile/pg-pubsub"
+
+import { postgraphile, makePluginHook } from "postgraphile"
+
+dotenv.config()
 
 const app = express();
-
-require('dotenv').config();
 
 app.use(cors());
 
